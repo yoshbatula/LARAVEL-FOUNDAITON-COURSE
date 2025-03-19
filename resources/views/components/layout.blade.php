@@ -6,7 +6,10 @@
     <title>GWEN</title>
 </head>
 <body>
-    <H1>WELCOME GWEN</H1>
-    <a href=""></a>
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT</a>
+    <a href="/contact">CONTACT US</a>
+
+    <?php echo $slot ?>
 </body>
 </html>
