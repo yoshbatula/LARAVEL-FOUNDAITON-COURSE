@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GWEN</title>
+    @vite(["resources/css/app.css", "resources/js/app.js"])
+    <title></title>
 </head>
 <body>
-    <a href="/">HOME</a>
-    <a href="/about">ABOUT</a>
-    <a href="/contact">CONTACT US</a>
-
-    <?php echo $slot ?>
+    <x-nav-link class="text-black" href="/">Home</x-nav-link>
+    <x-nav-link href="/about">About</x-nav-link>
+    <x-nav-link href="/contact">Contact</x-nav-link>
+    
+    {{ $slot }}
 </body>
 </html>
