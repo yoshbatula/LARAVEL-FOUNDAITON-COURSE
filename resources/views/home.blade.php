@@ -1,6 +1,6 @@
 <x-layout>
    <h1>WELCOME TO THE DASHBOARD</h1>
-   <x-rho>
-      <h3>yosh</h3>
-   </x-rho>
+   <x-slot:heading>
+         DASHBOARD
+   </x-slot:heading>
 </x-layout>
