@@ -4,7 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home', [
+    return view('home');
+    
+});
+
+Route::get('/jobs', function () {
+    return view('jobs', [
         'jobs' => [
             [
                 'title' => 'Web Developer',
@@ -18,15 +23,21 @@ Route::get('/', function () {
             ]
         ]
     ]);
-    
-});
-
-Route::get('/about', function () {
-    return view('about');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', [
+        'contacts' => [
+            [
+                'name' => 'John Doe',
+                'email' => 'jd@edu.ph'
+            ],
+            [
+                'name' => 'Jane Doe',
+                'email' => 'janedoe@edu.ph'
+            ]   
+        ] 
+    ]);
 });
 
 // Route::get('/dashboard', function () {

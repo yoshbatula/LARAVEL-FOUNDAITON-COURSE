@@ -2,5 +2,10 @@
     <x-slot name="heading">
         CONTACT
     </x-slot>
-    <h1>CONTACT PAGE</h1>
+    
+    <ul>
+        @foreach ($contacts as $contact)
+            <li class="font-bold"><strong>Name: {{ $contact['name'] }}</strong> Email: {{ $contact['email'] }}</li>
+        @endforeach
+    </ul>
 </x-layout>
