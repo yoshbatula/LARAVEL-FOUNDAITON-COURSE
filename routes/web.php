@@ -4,7 +4,21 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'jobs' => [
+            [
+                'title' => 'Web Developer',
+                'company' => 'Google',
+                'salary' => '100k'
+            ],
+            [
+                'title' => 'Backend Developer',
+                'company' => 'Facebook',
+                'salary' => '90k'
+            ]
+        ]
+    ]);
+    
 });
 
 Route::get('/about', function () {
