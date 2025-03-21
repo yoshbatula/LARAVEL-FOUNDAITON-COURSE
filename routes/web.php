@@ -12,17 +12,23 @@ Route::get('/jobs', function () {
     return view('jobs', [
         'jobs' => [
             [
+                'id'=> 1,
                 'title' => 'Web Developer',
                 'company' => 'Google',
                 'salary' => '100k'
             ],
             [
+                'id'=> 2,
                 'title' => 'Backend Developer',
                 'company' => 'Facebook',
                 'salary' => '90k'
             ]
         ]
     ]);
+});
+
+Route::get('/jobs/{id}', function ($id) {
+    dd($id);
 });
 
 Route::get('/contact', function () {
