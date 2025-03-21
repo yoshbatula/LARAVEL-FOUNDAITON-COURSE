@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
     
 });
+
 
 Route::get('/jobs', function () {
     return view('jobs', [
@@ -20,15 +22,37 @@ Route::get('/jobs', function () {
             [
                 'id'=> 2,
                 'title' => 'Backend Developer',
-                'company' => 'Facebook',
+                'company' => 'Facebook',    
                 'salary' => '90k'
             ]
         ]
     ]);
 });
 
+
 Route::get('/jobs/{id}', function ($id) {
-    dd($id);
+    $jobs = [
+        [
+            'id'=> 1,
+            'title' => 'Web Developer',
+            'company' => 'Google',
+            'salary' => '100k'
+        ],
+        [
+            'id'=> 2,
+            'title' => 'Backend Developer',
+            'company' => 'Facebook',
+            'salary' => '90k'
+        ]
+    ];
+
+    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
+
+    if (!$job) {
+        return "No job found with ID: $id";
+    }
+
+    return view('job', ['job' => $job]);
 });
 
 Route::get('/contact', function () {
