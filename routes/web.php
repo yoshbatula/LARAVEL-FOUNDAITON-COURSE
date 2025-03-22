@@ -5,6 +5,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 class Jobs {
+   
     
 }
 
