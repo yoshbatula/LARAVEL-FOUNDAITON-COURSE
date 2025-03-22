@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
+class Jobs {
+    
+}
+
 Route::get('/', function () {
     return view('home');
     
