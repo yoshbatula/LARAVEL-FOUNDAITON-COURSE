@@ -4,25 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
-class Jobs {
-   public static function all () {
-         return [
-              [
-                'id'=> 1,
-                'title' => 'Web Developer',
-                'company' => 'Google',
-                'salary' => '100k'
-              ],
-              [
-                'id'=> 2,
-                'title' => 'Backend Developer',
-                'company' => 'Facebook',
-                'salary' => '90k'
-              ]
-         ];
-   }
-    
-}
+use App\Models\Jobs;
 
 Route::get('/', function () {
     return view('home');
@@ -37,7 +19,11 @@ Route::get('/jobs', function () {
 
 
 Route::get('/jobs/{id}', function ($id) {
-    $job = Arr::first(Jobs::all(), fn($job) => $job['id'] == $id);
+    $job = Jobs::find($id);
+
+    if (! $job) {
+        abort(404);
+    }
     
     return view('job', ['job' => $job]);
 });
