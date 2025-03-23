@@ -5,7 +5,22 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 class Jobs {
-   
+   public static function all () {
+         return [
+              [
+                'id'=> 1,
+                'title' => 'Web Developer',
+                'company' => 'Google',
+                'salary' => '100k'
+              ],
+              [
+                'id'=> 2,
+                'title' => 'Backend Developer',
+                'company' => 'Facebook',
+                'salary' => '90k'
+              ]
+         ];
+   }
     
 }
 
@@ -16,47 +31,14 @@ Route::get('/', function () {
 
 
 Route::get('/jobs', function () {
-    return view('jobs', [
-        'jobs' => [
-            [
-                'id'=> 1,
-                'title' => 'Web Developer',
-                'company' => 'Google',
-                'salary' => '100k'
-            ],
-            [
-                'id'=> 2,
-                'title' => 'Backend Developer',
-                'company' => 'Facebook',    
-                'salary' => '90k'
-            ]
-        ]
-    ]);
+    return view('jobs', ['jobs' => Jobs::all()]);
+        
 });
 
 
 Route::get('/jobs/{id}', function ($id) {
-    $jobs = [
-        [
-            'id'=> 1,
-            'title' => 'Web Developer',
-            'company' => 'Google',
-            'salary' => '100k'
-        ],
-        [
-            'id'=> 2,
-            'title' => 'Backend Developer',
-            'company' => 'Facebook',
-            'salary' => '90k'
-        ]
-    ];
-
-    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
-
-    if (!$job) {
-        return "No job found with ID: $id";
-    }
-
+    $job = Arr::first(Jobs::all(), fn($job) => $job['id'] == $id);
+    
     return view('job', ['job' => $job]);
 });
 
