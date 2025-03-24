@@ -4,11 +4,11 @@
     </x-slot:heading>
     <ul>
         @foreach ($jobs as $job)
-            @if(is_array($job))
-                <li><a href="/jobs/{{ $job['id'] }}">Job name: {{ $job['title'] }} Job Company is {{ $job['company'] }}</a></li>
-            @else
-                <li>Invalid job data</li>
-            @endif
+            <li>
+                <a href="/jobs/{{ $job->id }}">
+                    Job name: {{ $job->title }} - Company: {{ $job->company }}
+                </a>
+            </li>
         @endforeach
     </ul>
 </x-layout>
