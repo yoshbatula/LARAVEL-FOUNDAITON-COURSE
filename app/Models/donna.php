@@ -7,6 +7,6 @@
     
     class donna extends Model {
         protected $table = 'donna';
-        protected $fillable = ['name', 'email'];
+        protected $fillable = ['id', 'name', 'email'];
     }
 ?>
