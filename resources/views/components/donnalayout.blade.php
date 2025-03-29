@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>hii</h1>
-
+    <!-- another component is here -->
     {{ $slot }}
 </body>
 </html>
