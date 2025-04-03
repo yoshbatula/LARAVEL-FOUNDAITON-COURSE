@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Jobs extends Model{
 
-  use HashFactory;
+  use HasFactory;
   protected $table = 'job_listings';
   protected $fillable = ['title', 'company', 'salary'];
 
