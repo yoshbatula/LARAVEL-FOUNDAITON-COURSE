@@ -47,6 +47,7 @@
             </div>
           </div>
         </div>
+        <!-- hidden for mobile menu button -->
         <div class="-mr-2 flex md:hidden">
           <!-- Mobile menu button -->
           <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" aria-controls="mobile-menu" aria-expanded="false">
